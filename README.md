@@ -30,7 +30,12 @@ Follow these instructions to set up and run the application locally:
    cd film-festival-app
    npm install
    ```
-3. Start the development server:
+3. Change .env.example to .env.local and populate with data you choose
+   ```bash
+   NODE_ENV='development'
+   REACT_APP_BACKEND_API=''
+   ```
+4. Start the development server:
    ```bash
    npm start
    ```
