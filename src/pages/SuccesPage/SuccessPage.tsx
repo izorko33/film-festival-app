@@ -1,7 +1,6 @@
-import React from "react";
-import "./SuccessPage.scss";
-import { useLocation } from "react-router-dom";
-import { Collapse, Rate, Alert } from "antd";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { Collapse, Rate, Alert } from 'antd';
 const { Panel } = Collapse;
 
 interface Question {
@@ -32,30 +31,34 @@ const SuccessPage: React.FC = () => {
   const submittedData: SubmittedData | undefined =
     location.state?.submittedData?.data;
 
-  return submittedData ? (
-    <div className="successPage">
-      <h1>Thank you for your submission!</h1>
-      <Collapse defaultActiveKey={["film", "review"]}>
-        {submittedData.relationships.survey.attributes.questions.map(
-          (item: Question, index: number) => (
-            <Panel header={item.label} key={item.questionId}>
-              {item.questionType === "range" ? (
-                <Rate
-                  disabled
-                  defaultValue={Number(
-                    submittedData.attributes.answers[index].answer
+  return (
+    <div className="content">
+      {submittedData ? (
+        <>
+          <h1>Thank you for your submission!</h1>
+          <Collapse defaultActiveKey={['film', 'review']}>
+            {submittedData.relationships.survey.attributes.questions.map(
+              (item: Question, index: number) => (
+                <Panel header={item.label} key={item.questionId}>
+                  {item.questionType === 'range' ? (
+                    <Rate
+                      disabled
+                      defaultValue={Number(
+                        submittedData.attributes.answers[index].answer
+                      )}
+                    />
+                  ) : (
+                    <p>{submittedData.attributes.answers[index].answer}</p>
                   )}
-                />
-              ) : (
-                <p>{submittedData.attributes.answers[index].answer}</p>
-              )}
-            </Panel>
-          )
-        )}
-      </Collapse>
+                </Panel>
+              )
+            )}
+          </Collapse>
+        </>
+      ) : (
+        <Alert message="No answers" type="error" />
+      )}
     </div>
-  ) : (
-    <Alert message="No answers" type="error" />
   );
 };
 

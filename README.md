@@ -35,6 +35,7 @@ Follow these instructions to set up and run the application locally:
    NODE_ENV='development'
    REACT_APP_BACKEND_API=''
    ```
+   (for use of mocked api use 'http://localhost:3000' for REACT_APP_BACKEND_API)
 4. Start the development server:
    ```bash
    npm start
@@ -58,7 +59,7 @@ docker build -t film-festival-app .
 2. Run the Docker container:
 
 ```bash
-docker run -p 3000:3000 film-festival-app
+docker run -p 3000:80 film-festival-app
 ```
 
 The application will be accessible at http://localhost:3000.
