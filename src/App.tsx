@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/film-festival-app" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<SurveyForm />} />
           <Route path="success" element={<SuccessPage />} />
           <Route path="*" element={<NoMatchPage />} />

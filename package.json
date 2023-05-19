@@ -1,6 +1,6 @@
 {
   "name": "survey-app",
-  "homepage": "https://izorko33.github.io/film-festival-app",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
