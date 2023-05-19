@@ -1,6 +1,5 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
-import './SurveyForm.scss';
 
 import FormCustom from '../../components/FormCustom/FormCustom';
 import Loading from '../../components/Loading/Loading';
@@ -16,7 +15,7 @@ const SurveyForm: React.FC = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="filmForm">
+    <div className="content">
       {error ? (
         <Alert
           message="Error"
