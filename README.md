@@ -9,6 +9,7 @@ This is a web application built with React that serves as an online survey tool 
 - Mocked API using MirageJS for development and testing
 - TypeScript for type safety
 - Docker containerization for easy deployment
+- Link to live: https://izorko33.github.io/film-festival-app/
 
 ## Prerequisites
 
